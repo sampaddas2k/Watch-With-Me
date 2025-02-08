@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #111;
+    color: white;
+}
+
+#video-container {
+    width: 100%;
+    max-width: 700px;
+    background-color: black;
+    flex-shrink: 0; /* Prevents video from shrinking */
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: auto;
+    height: calc(100vh - 70vh); /* Adjusted to ensure it fits on screen */
+    background: #1a1a1a;
+    overflow: hidden;
+    flex-shrink: 0; /* Prevents chat from shrinking */
+}
+
+#messages {
+    flex-grow: 1; /* Takes up available space */
+    overflow-y: auto;
+    padding: 10px;
+    max-height: calc(100% - 50px); /* Ensures input box is visible */
+    word-wrap: break-word;
+}
+
+#chat-input {
+    width: 100%;
+    height: 50px;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: white;
+    border-top: 1px solid #444;
+    box-sizing: border-box; /* Includes padding and border in height */
+}
+
+@media screen and (min-width: 769px) {
+    #chat-container {
+        height: calc(100vh - 83vh); /* Slightly larger for bigger screens */
+    }
+}
+
+@media screen and (max-height: 600px) { /* Adjust breakpoint as needed */
+    #chat-container {
+        height: calc(100vh - 50vh); /* More space for chat on smaller screens */
+    }
+}
